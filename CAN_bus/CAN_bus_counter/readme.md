@@ -1,0 +1,1 @@
+Application of the CAN bus for demonstration purpose. Connected to the receiver board 4 leds that are lit up showing in binary the amount of times the button is pressed on the other board. The information of the button pressed is sent via the CAN bus. 
