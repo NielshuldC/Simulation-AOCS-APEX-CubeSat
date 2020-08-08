@@ -86,10 +86,15 @@ def cube_perturbation(xp,yp,zp):
 
 tofs = TimeDelta(np.linspace(0,10000000 * u.s, num=1000))
 
-for 
-
-rr = propagate(ss,tofs,method=cowell,ad=cube_perturbation)
-
+for i in range(1,10000000):
+    prestate = i*100-100
+    state = i*100
+    tofs = TimeDelta(np.linspace(prestate * u.s,state * u.s, num=2))
+    rr = propagate(ss,tofs,method=cowell,ad=cube_perturbation)
+    xp=rr.x[1]
+    yp=rr.y[1]
+    zp=rr.z[1]
+    
 fig2 = plt.figure(figsize=(8, 7))
 ax = fig2.add_subplot(111, projection='3d')
 rc = [-0.68, 0.68]
