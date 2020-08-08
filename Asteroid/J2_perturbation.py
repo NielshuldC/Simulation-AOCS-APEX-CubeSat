@@ -72,6 +72,7 @@ tofs = TimeDelta(np.linspace(0,10000000 * u.s, num=1000))
 rr = propagate(ss,tofs,method=cowell,ad=J2_perturbation,J2=J,R=0.780*u.km)
 
 fig2 = plt.figure(figsize=(8, 7))
+ax = fig2.add_subplot(111, projection='3d')
 uu, vw = np.mgrid[0:4*np.pi:80j, 0:np.pi:80j]
 xx = np.cos(uu)*np.sin(vw)
 yy = np.sin(uu)*np.sin(vw)
