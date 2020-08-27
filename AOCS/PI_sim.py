@@ -103,7 +103,7 @@ for i in range(1,10000):
         # Starting maneuver if signal from microcontroller is received
         line == msg.decode('utf-8')
         from poliastro.maneuver import Maneuver
-        dv = [line[0], line[1], 0] * u.m / u.s
+        dv = [line[0]*1000, line[1]*1000, 0] * u.m / u.s
         man = Maneuver.impulse(dv)
         orbit = Orbit.from_vectors(Earth, [rx,ry,rz]*u.km,[vx,vy,vz]*u.km/u.s)
         orbit = orbit.apply_maneuver(man)
