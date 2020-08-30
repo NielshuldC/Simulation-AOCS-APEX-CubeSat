@@ -10,7 +10,7 @@ while(True):
         can = CAN(1, CAN.NORMAL, extframe=True, prescaler=16, sjw=4, bs1=25, bs2=1)
         can.setfilter(0, CAN.LIST16, 0, (123, 122, 125, 126))
         (idr, isRTR, filterMatchIndex, telegram) = can.recv(0)
-        if idr = 122:
+        if idr == 122:
             print(telegram)
        
 
